@@ -143,6 +143,33 @@ reveals.forEach(el => revealObserver.observe(el));
 /* ================================================================
    8. STATS COUNTER ANIMATION
 ================================================================ */
+
+/* ---- 8a. "Cases Handled" weekly auto-increment ----
+   The Cases Handled figure grows by +1 every 7 days, counted from
+   CASES_START_DATE. Adjust CASES_START_DATE and CASES_BASE_COUNT
+   below if you want to re-anchor the count (e.g. to the day the
+   site first went live, or to your actual current case count). */
+const CASES_BASE_COUNT  = 500;
+const CASES_START_DATE  = new Date('2026-09-04T00:00:00'); // anchor date — edit as needed
+
+function getWeeklyIncrementedCount(baseCount, startDate) {
+  const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
+  const now = new Date();
+  const weeksElapsed = Math.max(0, Math.floor((now - startDate) / MS_PER_WEEK));
+  return baseCount + weeksElapsed;
+}
+
+// Find the "Cases Handled" stat and refresh its data-count with the
+// current auto-incremented value before the counter animation runs.
+document.querySelectorAll('.statsbar__item').forEach(item => {
+  const label = item.querySelector('p');
+  const numEl = item.querySelector('.statsbar__num');
+  if (label && numEl && /cases handled/i.test(label.textContent)) {
+    const currentCount = getWeeklyIncrementedCount(CASES_BASE_COUNT, CASES_START_DATE);
+    numEl.setAttribute('data-count', currentCount);
+  }
+});
+
 let countersStarted = false;
 
 const startCounters = () => {
@@ -181,6 +208,7 @@ if (statsBar) {
   );
   statsObserver.observe(statsBar);
 }
+
 
 /* ================================================================
    9. CONTACT FORM HANDLING
