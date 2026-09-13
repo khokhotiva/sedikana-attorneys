@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sedikanaattorneys.co.za/sitemap.xml
