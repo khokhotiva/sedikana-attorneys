@@ -14,8 +14,6 @@ const mobileMenu  = document.getElementById('mobileMenu');
 const mobileLinks = document.querySelectorAll('.mobile-link');
 const backToTop   = document.getElementById('backToTop');
 const yearEl      = document.getElementById('year');
-const contactForm = document.getElementById('contactForm');
-const formFeedback = document.getElementById('formFeedback');
 const reveals     = document.querySelectorAll('.reveal');
 const statNums    = document.querySelectorAll('.statsbar__num');
 
@@ -211,58 +209,10 @@ if (statsBar) {
 
 
 /* ================================================================
-   9. CONTACT FORM HANDLING
+   9. CONTACT FORM
+   Google Forms handles contact form submissions directly.
 ================================================================ */
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
 
-    const name    = contactForm.querySelector('#name').value.trim();
-    const email   = contactForm.querySelector('#email').value.trim();
-    const message = contactForm.querySelector('#message').value.trim();
-
-    // Basic validation
-    if (!name || !email || !message) {
-      showFeedback('error', 'Please fill in all required fields (Name, Email, Message).');
-      return;
-    }
-
-    if (!isValidEmail(email)) {
-      showFeedback('error', 'Please enter a valid email address.');
-      return;
-    }
-
-    // Simulate submission (replace with real endpoint / mailto / formspree)
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
-
-    setTimeout(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-      showFeedback('success', `Thank you, ${name}! Your message has been received. We will contact you shortly.`);
-      contactForm.reset();
-    }, 1600);
-  });
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function showFeedback(type, message) {
-  formFeedback.className = `form__feedback ${type}`;
-  formFeedback.textContent = message;
-  formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-  // Auto-hide success after 8 seconds
-  if (type === 'success') {
-    setTimeout(() => {
-      formFeedback.className = 'form__feedback';
-      formFeedback.textContent = '';
-    }, 8000);
-  }
-}
 
 /* ================================================================
    10. ACTIVE NAV LINK HIGHLIGHT — on scroll
