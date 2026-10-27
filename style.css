@@ -1365,3 +1365,318 @@ em { font-style: italic; color: var(--gold); }
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ===================== LPC DIGITAL ID & VERIFICATION ===================== */
+
+.lpc-verification {
+  background: var(--off-white);
+}
+
+.lpc-verification__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+.lpc-verification__card {
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid rgba(11, 35, 65, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(7, 24, 48, 0.07);
+}
+
+.lpc-verification__card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--navy);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.lpc-verification__card-heading i {
+  color: var(--gold);
+  font-size: 1.4rem;
+}
+
+.lpc-verification__image-link {
+  display: block;
+  overflow: hidden;
+  background: #f4f4f4;
+  border: 1px solid rgba(11, 35, 65, 0.1);
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.lpc-verification__image-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(7, 24, 48, 0.12);
+}
+
+.lpc-verification__image-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.lpc-verification__hint {
+  margin: 16px 0 20px;
+  color: #626b78;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.lpc-verification__card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lpc-verification__card-actions .btn {
+  flex: 1 1 180px;
+  justify-content: center;
+  text-align: center;
+}
+
+.lpc-verification__details {
+  padding: 8px 0;
+}
+
+.lpc-verification__label {
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.lpc-verification__identity h3 {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.lpc-verification__role {
+  margin-bottom: 26px;
+  color: #606b79;
+  font-size: 0.95rem;
+}
+
+.lpc-verification__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(11, 35, 65, 0.12);
+}
+
+.lpc-verification__facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 18px 14px 18px 0;
+  border-bottom: 1px solid rgba(11, 35, 65, 0.12);
+}
+
+.lpc-verification__facts > div:nth-child(even) {
+  padding-left: 14px;
+  border-left: 1px solid rgba(11, 35, 65, 0.12);
+}
+
+.lpc-verification__facts span {
+  color: #687383;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.lpc-verification__facts strong {
+  color: var(--navy);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.lpc-verification__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin: 24px 0;
+  padding: 18px;
+  background: var(--gold-pale);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+}
+
+.lpc-verification__notice > i {
+  margin-top: 3px;
+  color: var(--navy);
+  font-size: 1.1rem;
+}
+
+.lpc-verification__notice p {
+  margin: 0;
+  color: var(--navy);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.lpc-verification__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.lpc-verification__actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.lpc-verification__help-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 4px;
+  transition: color 0.25s ease;
+}
+
+.lpc-verification__help-link:hover {
+  color: #8a682d;
+}
+
+.lpc-verification__qr-note {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(11, 35, 65, 0.12);
+  color: #606b79;
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+
+.lpc-verification__qr-note strong {
+  color: var(--navy);
+}
+
+.lpc-verification__disclaimer {
+  max-width: 850px;
+  margin: 36px auto 0;
+  color: #737b86;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* ===================== CODED BY TIBA FOOTER CREDIT ===================== */
+
+.footer__credit {
+  color: inherit;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.footer__credit a {
+  color: var(--gold-light);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer__credit a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ===================== LPC RESPONSIVE STYLES ===================== */
+
+@media (max-width: 1024px) {
+  .lpc-verification__inner {
+    gap: 30px;
+  }
+
+  .lpc-verification__card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lpc-verification__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .lpc-verification__card {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .lpc-verification__details {
+    padding: 0;
+  }
+
+  .lpc-verification__identity h3 {
+    font-size: 2rem;
+  }
+
+  .lpc-verification__disclaimer {
+    margin-top: 28px;
+  }
+
+  .footer__credit {
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .lpc-verification__card {
+    padding: 16px;
+  }
+
+  .lpc-verification__card-heading {
+    font-size: 0.9rem;
+  }
+
+  .lpc-verification__card-actions {
+    flex-direction: column;
+  }
+
+  .lpc-verification__card-actions .btn {
+    width: 100%;
+  }
+
+  .lpc-verification__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .lpc-verification__facts > div,
+  .lpc-verification__facts > div:nth-child(even) {
+    padding: 15px 0;
+    border-left: none;
+  }
+
+  .lpc-verification__notice {
+    padding: 14px;
+  }
+}
