@@ -1295,6 +1295,19 @@ em { font-style: italic; color: var(--gold); }
   .contact__details { flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
   .contact__item { flex: 1 1 200px; }
   .contact__tagline { width: 100%; }
+  .lpc-verification__card-actions .btn {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    min-height: 42px;
+    gap: 8px;
+}
+
+.lpc-verification__card-actions {
+    align-items: center;
+    gap: 10px;
+}
 }
 
 /* Mobile (≤ 768px) */
@@ -1586,26 +1599,6 @@ em { font-style: italic; color: var(--gold); }
   text-align: center;
 }
 
-/* ===================== CODED BY TIBA FOOTER CREDIT ===================== */
-
-.footer__credit {
-  color: inherit;
-  font-size: 0.85rem;
-  line-height: 1.8;
-}
-
-.footer__credit a {
-  color: var(--gold-light);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-
-.footer__credit a:hover {
-  color: var(--white);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
 
 /* ===================== LPC RESPONSIVE STYLES ===================== */
 
@@ -1679,4 +1672,32 @@ em { font-style: italic; color: var(--gold); }
   .lpc-verification__notice {
     padding: 14px;
   }
+}
+
+.navbar__logo-icon img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ===================== CODED BY TIBA FOOTER CREDIT ===================== */
+
+.footer__credit {
+  color: inherit;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.footer__credit a {
+  color: var(--gold-light);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer__credit a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
